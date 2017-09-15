@@ -25,6 +25,6 @@ Description: Qt5 Configuration Utility
  QtCurve theme and many more. Each style could be customized further
  by changing the color schema.
  .
- Qt5ct will only be active on environments other than running Plasma.
+ Qt5ct will only be active on environments other than Plasma.
  Default configuration have switch to disable running on Plasma.
 
