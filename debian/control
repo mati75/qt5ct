@@ -1,16 +1,17 @@
 Source: qt5ct
 Section: utils
 Priority: extra
-Maintainer: Mateusz Łukasik <mati75@linuxmint.pl>
-Uploaders: Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>
+Maintainer: Debian Qt-extras Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders: Mateusz Łukasik <mati75@linuxmint.pl>, Lisandro Damián
+Nicanor Pérez Meyer <lisandro@debian.org>
 Build-Depends: debhelper (>= 10), qtbase5-dev, libqt5svg5-dev,
  qttools5-dev-tools, qtbase5-private-dev, libfontconfig1-dev,
  libfreetype6-dev, libglib2.0-dev, libxrender-dev,
  libmtdev-dev [linux-any], libegl1-mesa-dev
 Standards-Version: 4.1.0
 Homepage: https://sourceforge.net/projects/qt5ct/
-Vcs-Git: https://github.com/mati75/qt5ct.git
-Vcs-Browser: https://github.com/mati75/qt5ct.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-kde/qt-extras/qt5ct.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-kde/qt-extras/qt5ct.git/
 
 Package: qt5ct
 Architecture: any
@@ -23,3 +24,7 @@ Description: Qt5 Configuration Utility
  Qt5ct could use qt5 gtk theme, KDE breeze theme, the fusion theme,
  QtCurve theme and many more. Each style could be customized further
  by changing the color schema.
+ .
+ Qt5ct will only be active on environments other than running Plasma.
+ Default configuration have switch to disable running on Plasma.
+

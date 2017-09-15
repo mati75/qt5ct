@@ -6,6 +6,12 @@ Copyright: 2014-2017, Ilya Kotov <forkorov02@hotmail.ru>
 Files: *
 Copyright: 2014-2017, Ilya Kotov <forkorov02@hotmail.ru>
 License: BSD-2-clause
+
+Files: debian/*
+Copyright: 2015-2017, Mateusz Łukasik <mati75@linuxmint.pl>
+License: BSD-2-clause
+
+License: BSD-2-clause
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are
  met:
@@ -29,21 +35,3 @@ License: BSD-2-clause
  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-Files: debian/*
-Copyright: 2015-2017, Mateusz Łukasik <mati75@linuxmint.pl>
-License: GPL-2+
- This package is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
- .
- This package is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- .
- You should have received a copy of the GNU General Public License
- along with this program. If not, see <http://www.gnu.org/licenses/>
- .
- On Debian systems, the complete text of the GNU General
- Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
