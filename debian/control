@@ -3,7 +3,7 @@ Section: utils
 Priority: extra
 Maintainer: Debian Qt-extras Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Mateusz Łukasik <mati75@linuxmint.pl>, Lisandro Damián
-Nicanor Pérez Meyer <lisandro@debian.org>
+ Nicanor Pérez Meyer <lisandro@debian.org>
 Build-Depends: debhelper (>= 10), qtbase5-dev, libqt5svg5-dev,
  qttools5-dev-tools, qtbase5-private-dev, libfontconfig1-dev,
  libfreetype6-dev, libglib2.0-dev, libxrender-dev,
