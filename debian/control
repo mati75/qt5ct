@@ -2,12 +2,19 @@ Source: qt5ct
 Section: utils
 Priority: extra
 Maintainer: Debian Qt-extras Maintainers <debian-qt-kde@lists.debian.org>
-Uploaders: Mateusz Łukasik <mati75@linuxmint.pl>, Lisandro Damián
- Nicanor Pérez Meyer <lisandro@debian.org>
-Build-Depends: debhelper (>= 10), qtbase5-dev, libqt5svg5-dev,
- qttools5-dev-tools, qtbase5-private-dev, libfontconfig1-dev,
- libfreetype6-dev, libglib2.0-dev, libxrender-dev,
- libmtdev-dev [linux-any], libegl1-mesa-dev
+Uploaders: Mateusz Łukasik <mati75@linuxmint.pl>,
+           Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>
+Build-Depends: debhelper (>= 10),
+               libegl1-mesa-dev,
+               libfontconfig1-dev,
+               libfreetype6-dev,
+               libglib2.0-dev,
+               libmtdev-dev [linux-any],
+               libqt5svg5-dev,
+               libxrender-dev,
+               qtbase5-dev,
+               qtbase5-private-dev,
+               qttools5-dev-tools
 Standards-Version: 4.1.0
 Homepage: https://sourceforge.net/projects/qt5ct/
 Vcs-Git: https://anonscm.debian.org/git/pkg-kde/qt-extras/qt5ct.git
@@ -15,7 +22,7 @@ Vcs-Browser: https://anonscm.debian.org/cgit/pkg-kde/qt-extras/qt5ct.git/
 
 Package: qt5ct
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Suggests: qt5-style-plugins
 Description: Qt5 Configuration Utility
  This utility allows users to configure Qt5 settings (theme, font,
@@ -27,4 +34,3 @@ Description: Qt5 Configuration Utility
  .
  Qt5ct will only be active on environments other than Plasma.
  Default configuration have switch to disable running on Plasma.
-
