@@ -219,30 +219,30 @@
 <context>
     <name>FontsPage</name>
     <message>
-        <location filename="../fontspage.ui" line="44"/>
-        <location filename="../fontspage.ui" line="64"/>
-        <location filename="../fontspage.ui" line="80"/>
-        <location filename="../fontspage.ui" line="87"/>
+        <location filename="../fontspage.ui" line="47"/>
+        <location filename="../fontspage.ui" line="67"/>
+        <location filename="../fontspage.ui" line="86"/>
+        <location filename="../fontspage.ui" line="93"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../fontspage.ui" line="57"/>
+        <location filename="../fontspage.ui" line="60"/>
         <source>General:</source>
         <translation>Γενικά:</translation>
     </message>
     <message>
-        <location filename="../fontspage.ui" line="94"/>
+        <location filename="../fontspage.ui" line="100"/>
         <source>Fixed width:</source>
         <translation>Σταθερού πλάτους:</translation>
     </message>
     <message>
-        <location filename="../fontspage.ui" line="119"/>
+        <location filename="../fontspage.ui" line="125"/>
         <source>Create  fonts.conf</source>
         <translation>Δημιουργία του fonts.conf</translation>
     </message>
     <message>
-        <location filename="../fontspage.ui" line="126"/>
+        <location filename="../fontspage.ui" line="132"/>
         <source>Remove fonts.conf</source>
         <translation>Αφαίρεση του fonts.conf</translation>
     </message>
@@ -352,6 +352,11 @@
         <location filename="../interfacepage.ui" line="229"/>
         <source>Mouse wheel scroll lines:</source>
         <translation>Γραμμές κύλισης τροχού ποντικιού:</translation>
+    </message>
+    <message>
+        <location filename="../interfacepage.ui" line="246"/>
+        <source>Show shortcut underlines</source>
+        <translation>Εμφάνιση των υπογραμμίσεων των συντομεύσεων</translation>
     </message>
     <message>
         <location filename="../interfacepage.cpp" line="47"/>
@@ -643,8 +648,8 @@
     </message>
     <message>
         <location filename="../qsspage.cpp" line="113"/>
-        <location filename="../qsspage.cpp" line="205"/>
-        <location filename="../qsspage.cpp" line="216"/>
+        <location filename="../qsspage.cpp" line="211"/>
+        <location filename="../qsspage.cpp" line="222"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
@@ -664,22 +669,22 @@
         <translation>Είστε σίγουρος-η ότι θέλετε να αφαιρέσετε το φύλλο αισθητικής επικάλυψης «%1»;</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="198"/>
+        <location filename="../qsspage.cpp" line="204"/>
         <source>Rename Style Sheet</source>
         <translation>Μετονομασία φύλλου αισθητικής επικάλυψης</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="198"/>
+        <location filename="../qsspage.cpp" line="204"/>
         <source>Style sheet name:</source>
         <translation>Όνομα του φύλλου αισθητικής επικάλυψης:</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="205"/>
+        <location filename="../qsspage.cpp" line="211"/>
         <source>The style sheet &quot;%1&quot; already exists</source>
         <translation>Το φύλλο αισθητικής επικάλυψης «%1» υπάρχει ήδη</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="216"/>
+        <location filename="../qsspage.cpp" line="222"/>
         <source>Unable to rename file</source>
         <translation>Αδυναμία μετονομασία του αρχείου</translation>
     </message>
@@ -687,22 +692,22 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.cpp" line="60"/>
+        <location filename="../main.cpp" line="62"/>
         <source>Please remove the &lt;b&gt;QT_STYLE_OVERRIDE&lt;/b&gt; environment variable</source>
         <translation>Παρακαλώ αφαιρέστε την μεταβλητή περιβάλλοντος &lt;b&gt;QT_STYLE_OVERRIDE&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="65"/>
+        <location filename="../main.cpp" line="67"/>
         <source>The &lt;b&gt;QT_QPA_PLATFORMTHEME&lt;/b&gt; environment variable is not set correctly</source>
         <translation>Η μεταβλητή περιβάλλοντος &lt;b&gt;QT_QPA_PLATFORMTHEME&lt;/b&gt; δεν έχει οριστεί σωστά</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="71"/>
+        <location filename="../main.cpp" line="73"/>
         <source>Unable to find &lt;b&gt;libqt5ct-style.so&lt;/b&gt;</source>
         <translation>Αδύνατη η εύρεση του &lt;b&gt;libqt5ct-style.so&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="76"/>
+        <location filename="../main.cpp" line="78"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>

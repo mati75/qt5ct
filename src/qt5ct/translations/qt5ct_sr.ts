@@ -219,30 +219,30 @@
 <context>
     <name>FontsPage</name>
     <message>
-        <location filename="../fontspage.ui" line="44"/>
-        <location filename="../fontspage.ui" line="64"/>
-        <location filename="../fontspage.ui" line="80"/>
-        <location filename="../fontspage.ui" line="87"/>
+        <location filename="../fontspage.ui" line="47"/>
+        <location filename="../fontspage.ui" line="67"/>
+        <location filename="../fontspage.ui" line="86"/>
+        <location filename="../fontspage.ui" line="93"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../fontspage.ui" line="57"/>
+        <location filename="../fontspage.ui" line="60"/>
         <source>General:</source>
         <translation>Опште:</translation>
     </message>
     <message>
-        <location filename="../fontspage.ui" line="94"/>
+        <location filename="../fontspage.ui" line="100"/>
         <source>Fixed width:</source>
         <translation>Одређена ширина:</translation>
     </message>
     <message>
-        <location filename="../fontspage.ui" line="119"/>
+        <location filename="../fontspage.ui" line="125"/>
         <source>Create  fonts.conf</source>
         <translation>Креирај  fonts.conf</translation>
     </message>
     <message>
-        <location filename="../fontspage.ui" line="126"/>
+        <location filename="../fontspage.ui" line="132"/>
         <source>Remove fonts.conf</source>
         <translation>Обриши fonts.conf</translation>
     </message>
@@ -351,6 +351,11 @@
         <location filename="../interfacepage.ui" line="229"/>
         <source>Mouse wheel scroll lines:</source>
         <translation>Линије точкића миша:</translation>
+    </message>
+    <message>
+        <location filename="../interfacepage.ui" line="246"/>
+        <source>Show shortcut underlines</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../interfacepage.cpp" line="47"/>
@@ -642,8 +647,8 @@
     </message>
     <message>
         <location filename="../qsspage.cpp" line="113"/>
-        <location filename="../qsspage.cpp" line="205"/>
-        <location filename="../qsspage.cpp" line="216"/>
+        <location filename="../qsspage.cpp" line="211"/>
+        <location filename="../qsspage.cpp" line="222"/>
         <source>Error</source>
         <translation>Грешка</translation>
     </message>
@@ -663,22 +668,22 @@
         <translation>Да ли сте сигурни да желите брисање стила &quot;%1&quot;?</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="198"/>
+        <location filename="../qsspage.cpp" line="204"/>
         <source>Rename Style Sheet</source>
         <translation>Преименуј стил</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="198"/>
+        <location filename="../qsspage.cpp" line="204"/>
         <source>Style sheet name:</source>
         <translation>Име стила:</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="205"/>
+        <location filename="../qsspage.cpp" line="211"/>
         <source>The style sheet &quot;%1&quot; already exists</source>
         <translation>Стил &quot;%1&quot; већ постоји</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="216"/>
+        <location filename="../qsspage.cpp" line="222"/>
         <source>Unable to rename file</source>
         <translation>Није могуће преименовати фајл</translation>
     </message>
@@ -686,22 +691,22 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.cpp" line="60"/>
+        <location filename="../main.cpp" line="62"/>
         <source>Please remove the &lt;b&gt;QT_STYLE_OVERRIDE&lt;/b&gt; environment variable</source>
         <translation>Молим обришите &lt;b&gt;QT_STYLE_OVERRIDE&lt;/b&gt; променљиву окружења</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="65"/>
+        <location filename="../main.cpp" line="67"/>
         <source>The &lt;b&gt;QT_QPA_PLATFORMTHEME&lt;/b&gt; environment variable is not set correctly</source>
         <translation>Променљива&lt;b&gt;QT_QPA_PLATFORMTHEME&lt;/b&gt; окружења није подешена исправно</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="71"/>
+        <location filename="../main.cpp" line="73"/>
         <source>Unable to find &lt;b&gt;libqt5ct-style.so&lt;/b&gt;</source>
         <translation>Није могуће пронаћи &lt;b&gt;libqt5ct-style.so&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="76"/>
+        <location filename="../main.cpp" line="78"/>
         <source>Error</source>
         <translation>Грешка</translation>
     </message>

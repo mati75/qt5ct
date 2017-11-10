@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@hotmail.ru>
+ * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -34,6 +34,7 @@
 #include <QMessageBox>
 #include <QProcessEnvironment>
 #include <QStyleFactory>
+#include <QtDebug>
 #include "mainwindow.h"
 
 int main(int argc, char **argv)
@@ -48,8 +49,9 @@ int main(int argc, char **argv)
     qt_translator.load(QLibraryInfo::location (QLibraryInfo::TranslationsPath) + "/qtbase_" + locale);
     app.installTranslator(&qt_translator);
 
-    qDebug("Configuration path: %s", qPrintable(Qt5CT::configPath()));
-    qDebug("Shared QSS path: %s", qPrintable(Qt5CT::sharedStyleSheetPath()));
+    qDebug() << "Configuration path:" << Qt5CT::configPath();
+    qDebug() << "Shared QSS paths:" << Qt5CT::sharedStyleSheetPaths();
+    qDebug() << "Shared color scheme paths:" << Qt5CT::sharedColorSchemePaths();
 
     //checking environment
     QStringList errorMessages;

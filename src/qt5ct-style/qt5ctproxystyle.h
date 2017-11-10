@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@hotmail.ru>
+ * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -44,6 +44,7 @@ public:
 private:
     int m_dialogButtonsHaveIcons;
     int m_activateItemOnSingleClick;
+    int m_underlineShortcut;
 
 };
 

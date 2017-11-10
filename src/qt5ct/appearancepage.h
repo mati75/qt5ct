@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@hotmail.ru>
+ * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -66,6 +66,7 @@ private:
     void setStyle(QWidget *w, QStyle *s);
     void setPalette(QWidget *w, QPalette p);
     void findColorSchemes(const QString &path);
+    void findColorSchemes(const QStringList &paths);
     QPalette loadColorScheme(const QString &filePath);
     void createColorScheme(const QString &name, const QPalette &palette);
     Ui::AppearancePage *m_ui;

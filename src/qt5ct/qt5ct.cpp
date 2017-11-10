@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@hotmail.ru>
+ * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -28,6 +28,8 @@
 
 #include <QDir>
 #include <QLocale>
+#include <QLatin1String>
+#include <QStandardPaths>
 #include "qt5ct.h"
 
 #ifndef QT5CT_DATADIR
@@ -37,38 +39,23 @@
 
 QString Qt5CT::configPath()
 {
-    return QDir::homePath() + "/.config/qt5ct/";
+    return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1String("/qt5ct");
 }
 
 QString Qt5CT::configFile()
 {
-    return configPath() + "qt5ct.conf";
+    return configPath() + QLatin1String("/qt5ct.conf");
 }
 
 QStringList Qt5CT::iconPaths()
 {
-    QString xdgDataDirs = qgetenv("XDG_DATA_DIRS");
-    QString xdgDataHome = qgetenv("XDG_DATA_HOME");
-
     QStringList paths;
-    paths << QDir::homePath() + "/.icons/";
+    paths << QDir::homePath() + QLatin1String("/.icons");
 
-    if(xdgDataDirs.isEmpty())
+    foreach (QString p, QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation))
     {
-        paths << "/usr/share/icons";
-        paths << "/usr/local/share/icons";
+        paths << (p + QLatin1String("/icons"));
     }
-    else
-    {
-        foreach (QString p, xdgDataDirs.split(":"))
-            paths << QDir(p + "/icons/").absolutePath();
-    }
-
-    if(xdgDataHome.isEmpty())
-        xdgDataHome = QDir::homePath() + "/.local/share";
-
-    paths << "/usr/share/pixmaps";
-    paths << xdgDataHome + "/icons";
     paths.removeDuplicates();
 
     //remove invalid
@@ -82,22 +69,36 @@ QStringList Qt5CT::iconPaths()
 
 QString Qt5CT::userStyleSheetPath()
 {
-    return configPath() + "qss/";
+    return configPath() + QLatin1String("/qss");
 }
 
-QString Qt5CT::sharedStyleSheetPath()
+QStringList Qt5CT::sharedStyleSheetPaths()
 {
-    return QT5CT_DATADIR"/qt5ct/qss/";
+    QStringList paths;
+    foreach (QString p, QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation))
+    {
+        paths << (p + QLatin1String("/qt5ct/qss"));
+    }
+    paths << QLatin1String(QT5CT_DATADIR"/qt5ct/qss");
+    paths.removeDuplicates();
+    return paths;
 }
 
 QString Qt5CT::userColorSchemePath()
 {
-    return configPath() + "colors/";
+    return configPath() + QLatin1String("/colors");
 }
 
-QString Qt5CT::sharedColorSchemePath()
+QStringList Qt5CT::sharedColorSchemePaths()
 {
-    return QT5CT_DATADIR"/qt5ct/colors/";
+    QStringList paths;
+    foreach (QString p, QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation))
+    {
+        paths << (p + QLatin1String("/qt5ct/colors"));
+    }
+    paths << QLatin1String(QT5CT_DATADIR"/qt5ct/colors");
+    paths.removeDuplicates();
+    return paths;
 }
 
 QString Qt5CT::systemLanguageID()

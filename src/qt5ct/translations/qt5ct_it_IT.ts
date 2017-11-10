@@ -219,30 +219,30 @@
 <context>
     <name>FontsPage</name>
     <message>
-        <location filename="../fontspage.ui" line="44"/>
-        <location filename="../fontspage.ui" line="64"/>
-        <location filename="../fontspage.ui" line="80"/>
-        <location filename="../fontspage.ui" line="87"/>
+        <location filename="../fontspage.ui" line="47"/>
+        <location filename="../fontspage.ui" line="67"/>
+        <location filename="../fontspage.ui" line="86"/>
+        <location filename="../fontspage.ui" line="93"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../fontspage.ui" line="57"/>
+        <location filename="../fontspage.ui" line="60"/>
         <source>General:</source>
         <translation>Generale:</translation>
     </message>
     <message>
-        <location filename="../fontspage.ui" line="94"/>
+        <location filename="../fontspage.ui" line="100"/>
         <source>Fixed width:</source>
         <translation>Larghezza fissa:</translation>
     </message>
     <message>
-        <location filename="../fontspage.ui" line="119"/>
+        <location filename="../fontspage.ui" line="125"/>
         <source>Create  fonts.conf</source>
         <translation>Crea  fonts.conf</translation>
     </message>
     <message>
-        <location filename="../fontspage.ui" line="126"/>
+        <location filename="../fontspage.ui" line="132"/>
         <source>Remove fonts.conf</source>
         <translation>Elimina fonts.conf</translation>
     </message>
@@ -345,37 +345,42 @@
     <message>
         <location filename="../interfacepage.ui" line="219"/>
         <source>Toolbar button style:</source>
-        <translation type="unfinished"></translation>
+        <translation>Stile pulsante barra strumenti:</translation>
     </message>
     <message>
         <location filename="../interfacepage.ui" line="229"/>
         <source>Mouse wheel scroll lines:</source>
-        <translation type="unfinished"></translation>
+        <translation>Linee scorrimento rotellina mouse:</translation>
+    </message>
+    <message>
+        <location filename="../interfacepage.ui" line="246"/>
+        <source>Show shortcut underlines</source>
+        <translation>Mostra sottolineatura collegamenti</translation>
     </message>
     <message>
         <location filename="../interfacepage.cpp" line="47"/>
         <source>Only display the icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra solo l&apos;icona</translation>
     </message>
     <message>
         <location filename="../interfacepage.cpp" line="48"/>
         <source>Only display the text</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra solo il testo</translation>
     </message>
     <message>
         <location filename="../interfacepage.cpp" line="49"/>
         <source>The text appears beside the icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Il testo appare accanto all&apos;icona</translation>
     </message>
     <message>
         <location filename="../interfacepage.cpp" line="50"/>
         <source>The text appears under the icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Il testo appare sotto l&apos;icona</translation>
     </message>
     <message>
         <location filename="../interfacepage.cpp" line="51"/>
         <source>Follow the application style</source>
-        <translation type="unfinished"></translation>
+        <translation>Segui lo stile dell&apos;applicazione</translation>
     </message>
 </context>
 <context>
@@ -642,8 +647,8 @@
     </message>
     <message>
         <location filename="../qsspage.cpp" line="113"/>
-        <location filename="../qsspage.cpp" line="205"/>
-        <location filename="../qsspage.cpp" line="216"/>
+        <location filename="../qsspage.cpp" line="211"/>
+        <location filename="../qsspage.cpp" line="222"/>
         <source>Error</source>
         <translation>Errore</translation>
     </message>
@@ -663,22 +668,22 @@
         <translation>Sei sicuro di voler rimuovere il foglio di stile &quot;%1&quot;?</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="198"/>
+        <location filename="../qsspage.cpp" line="204"/>
         <source>Rename Style Sheet</source>
         <translation>Rinomina il foglio di stile</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="198"/>
+        <location filename="../qsspage.cpp" line="204"/>
         <source>Style sheet name:</source>
         <translation>Nome del foglio di stile:</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="205"/>
+        <location filename="../qsspage.cpp" line="211"/>
         <source>The style sheet &quot;%1&quot; already exists</source>
         <translation>Il foglio di stile &quot;%1&quot; è già esistente</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="216"/>
+        <location filename="../qsspage.cpp" line="222"/>
         <source>Unable to rename file</source>
         <translation>Impossibile rinominare file</translation>
     </message>
@@ -686,22 +691,22 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.cpp" line="60"/>
+        <location filename="../main.cpp" line="62"/>
         <source>Please remove the &lt;b&gt;QT_STYLE_OVERRIDE&lt;/b&gt; environment variable</source>
         <translation>Rimuovi la variabile d&apos;ambiente &lt;b&gt;QT_STYLE_OVERRIDE&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="65"/>
+        <location filename="../main.cpp" line="67"/>
         <source>The &lt;b&gt;QT_QPA_PLATFORMTHEME&lt;/b&gt; environment variable is not set correctly</source>
         <translation>La variabile d&apos;ambiente &lt;b&gt;QT_QPA_PLATFORMTHEME&lt;/b&gt; non è impostata correttamente</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="71"/>
+        <location filename="../main.cpp" line="73"/>
         <source>Unable to find &lt;b&gt;libqt5ct-style.so&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile trovare &lt;b&gt;libqt5ct-style.so&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="76"/>
+        <location filename="../main.cpp" line="78"/>
         <source>Error</source>
         <translation>Errore</translation>
     </message>

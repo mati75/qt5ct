@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@hotmail.ru>
+ * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -30,7 +30,7 @@
 #define QT5CT_H
 
 #define QT5CT_VERSION_MAJOR 0
-#define QT5CT_VERSION_MINOR 33
+#define QT5CT_VERSION_MINOR 34
 
 #define QT5CT_TOSTRING(s) #s
 #define QT5CT_STRINGIFY(s)         QT5CT_TOSTRING(s)
@@ -48,9 +48,9 @@ public:
     static QString configFile();
     static QStringList iconPaths();
     static QString userStyleSheetPath();
-    static QString sharedStyleSheetPath();
+    static QStringList sharedStyleSheetPaths();
     static QString userColorSchemePath();
-    static QString sharedColorSchemePath();
+    static QStringList sharedColorSchemePaths();
     static QString systemLanguageID();
 
 private:

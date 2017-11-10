@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@hotmail.ru>
+ * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -50,7 +50,6 @@
 #include <private/qdbusmenubar_p.h>
 #endif
 #if !defined(QT_NO_DBUS) && !defined(QT_NO_SYSTEMTRAYICON)
-#include <QDBusArgument>
 #include <private/qdbustrayicon_p.h>
 #endif
 
@@ -91,6 +90,7 @@ QPlatformMenuBar *Qt5CTPlatformTheme::createPlatformMenuBar() const
     {
         QDBusConnection conn = QDBusConnection::sessionBus();
         m_dbusGlobalMenuAvailable = conn.interface()->isServiceRegistered("com.canonical.AppMenu.Registrar");
+        m_checkDBusGlobalMenu = false;
         qCDebug(lqt5ct) << "D-Bus global menu:" << (m_dbusGlobalMenuAvailable ? "yes" : "no");
     }
     return (m_dbusGlobalMenuAvailable ? new QDBusMenuBar() : nullptr);
