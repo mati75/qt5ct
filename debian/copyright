@@ -1,14 +1,14 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: qt5ct
 Source: http://downloads.sourceforge.net/project/qt5ct
-Copyright: 2014-2017, Ilya Kotov <forkorov02@hotmail.ru>
+Copyright: 2014-2018, Ilya Kotov <forkorov02@hotmail.ru>
 
 Files: *
-Copyright: 2014-2017, Ilya Kotov <forkorov02@hotmail.ru>
+Copyright: 2014-2018, Ilya Kotov <forkorov02@hotmail.ru>
 License: BSD-2-clause
 
 Files: debian/*
-Copyright: 2015-2017, Mateusz Łukasik <mati75@linuxmint.pl>
+Copyright: 2015-2018, Mateusz Łukasik <mati75@linuxmint.pl>
 License: BSD-2-clause
 
 License: BSD-2-clause
