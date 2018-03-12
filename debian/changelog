@@ -1,5 +1,6 @@
-qt5ct (0.34-2) UNRELEASED; urgency=medium
+qt5ct (0.35-1) UNRELEASED; urgency=medium
 
+  * New upstream release.
   * Not ship the AUTHORS file.
 
  -- Mateusz Łukasik <mati75@linuxmint.pl>  Fri, 19 Jan 2018 22:43:31 +0100
