@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Debian Qt-extras Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Mateusz Łukasik <mati75@linuxmint.pl>,
            Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>
-Build-Depends: debhelper (>= 10),
+Build-Depends: debhelper (>= 11),
                libegl1-mesa-dev,
                libfontconfig1-dev,
                libfreetype6-dev,
