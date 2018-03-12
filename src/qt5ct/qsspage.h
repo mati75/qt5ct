@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
+ * Copyright (c) 2014-2018, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -43,10 +43,10 @@ class QSSPage : public TabPage
     Q_OBJECT
 
 public:
-    explicit QSSPage(QWidget *parent = 0);
+    explicit QSSPage(QWidget *parent = nullptr);
     ~QSSPage();
 
-    void writeSettings();
+    void writeSettings() override;
 
 private slots:
     void on_qssListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *);
@@ -55,6 +55,7 @@ private slots:
     void on_removeButton_clicked();
     void on_renameButton_clicked();
     void on_qssListWidget_customContextMenuRequested(const QPoint &pos);
+    void copyStyleSheet();
 
 private:
     void readSettings();

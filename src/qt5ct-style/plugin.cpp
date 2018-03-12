@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
+ * Copyright (c) 2014-2018, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -38,7 +38,7 @@ class Qt5CTStylePlugin : public QStylePlugin
     Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QStyleFactoryInterface" FILE "qt5ct.json")
 
 public:
-    QStyle *create(const QString &key);
+    QStyle *create(const QString &key) override;
 };
 
 QStyle *Qt5CTStylePlugin::create(const QString &key)
@@ -51,7 +51,7 @@ QStyle *Qt5CTStylePlugin::create(const QString &key)
             style = "Fusion";
         return new Qt5CTProxyStyle(style);
     }
-    return 0;
+    return nullptr;
 }
 
 #include "plugin.moc"

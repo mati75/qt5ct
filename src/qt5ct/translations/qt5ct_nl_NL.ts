@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nl_NL">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl_NL" version="2.1">
 <context>
     <name>AppearancePage</name>
     <message>
@@ -9,131 +7,143 @@
         <translation>Stijl:</translation>
     </message>
     <message>
-        <location filename="../appearancepage.ui" line="27"/>
+        <location filename="../appearancepage.ui" line="59"/>
         <source>Preview</source>
         <translation>Voorbeeld</translation>
     </message>
     <message>
-        <location filename="../appearancepage.ui" line="34"/>
+        <location filename="../appearancepage.ui" line="66"/>
         <source>Active palette</source>
         <translation>Actief kleurenschema</translation>
     </message>
     <message>
-        <location filename="../appearancepage.ui" line="39"/>
+        <location filename="../appearancepage.ui" line="71"/>
         <source>Inactive palette</source>
         <translation>Inactief kleurenschema</translation>
     </message>
     <message>
-        <location filename="../appearancepage.ui" line="44"/>
+        <location filename="../appearancepage.ui" line="76"/>
         <source>Disabled palette</source>
         <translation>Uitgeschakeld kleurenschema</translation>
     </message>
     <message>
-        <location filename="../appearancepage.ui" line="91"/>
+        <location filename="../appearancepage.ui" line="107"/>
         <source>Palette</source>
         <translation>Kleurenschema</translation>
     </message>
     <message>
-        <location filename="../appearancepage.ui" line="102"/>
+        <location filename="../appearancepage.ui" line="118"/>
+        <location filename="../appearancepage.cpp" line="86"/>
         <source>Default</source>
         <translation>Standaard</translation>
     </message>
     <message>
-        <location filename="../appearancepage.ui" line="112"/>
+        <location filename="../appearancepage.ui" line="128"/>
         <source>Custom</source>
         <translation>Aangepast</translation>
     </message>
     <message>
-        <location filename="../appearancepage.ui" line="139"/>
+        <location filename="../appearancepage.ui" line="155"/>
         <source>Color scheme:</source>
         <translation>Kleurenschema:</translation>
     </message>
     <message>
-        <location filename="../appearancepage.ui" line="162"/>
+        <location filename="../appearancepage.ui" line="178"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../appearancepage.cpp" line="65"/>
+        <location filename="../appearancepage.ui" line="209"/>
+        <source>Standard dialogs:</source>
+        <translation>Standaard dialoogvensters:</translation>
+    </message>
+    <message>
+        <location filename="../appearancepage.cpp" line="69"/>
         <source>Create</source>
         <translation>Creëren</translation>
     </message>
     <message>
-        <location filename="../appearancepage.cpp" line="66"/>
+        <location filename="../appearancepage.cpp" line="70"/>
         <source>Edit</source>
         <translation>Bewerken</translation>
     </message>
     <message>
-        <location filename="../appearancepage.cpp" line="67"/>
+        <location filename="../appearancepage.cpp" line="71"/>
         <source>Create a Copy</source>
         <translation>Een kopie creëren</translation>
     </message>
     <message>
-        <location filename="../appearancepage.cpp" line="68"/>
+        <location filename="../appearancepage.cpp" line="72"/>
         <source>Rename</source>
         <translation>Naam wijzigen</translation>
     </message>
     <message>
-        <location filename="../appearancepage.cpp" line="70"/>
+        <location filename="../appearancepage.cpp" line="74"/>
         <source>Remove</source>
         <translation>Verwijderen</translation>
     </message>
     <message>
-        <location filename="../appearancepage.cpp" line="120"/>
-        <location filename="../appearancepage.cpp" line="194"/>
-        <location filename="../appearancepage.cpp" line="229"/>
+        <location filename="../appearancepage.cpp" line="141"/>
+        <location filename="../appearancepage.cpp" line="215"/>
+        <location filename="../appearancepage.cpp" line="254"/>
         <source>Enter Color Scheme Name</source>
         <translation>Voer een naam in voor dit kleurenschema</translation>
     </message>
     <message>
-        <location filename="../appearancepage.cpp" line="120"/>
-        <location filename="../appearancepage.cpp" line="194"/>
-        <location filename="../appearancepage.cpp" line="229"/>
+        <location filename="../appearancepage.cpp" line="141"/>
+        <location filename="../appearancepage.cpp" line="215"/>
+        <location filename="../appearancepage.cpp" line="254"/>
         <source>File name:</source>
         <translation>Bestandsnaam:</translation>
     </message>
     <message>
-        <location filename="../appearancepage.cpp" line="129"/>
-        <location filename="../appearancepage.cpp" line="205"/>
-        <location filename="../appearancepage.cpp" line="239"/>
+        <location filename="../appearancepage.cpp" line="150"/>
+        <location filename="../appearancepage.cpp" line="226"/>
+        <location filename="../appearancepage.cpp" line="234"/>
+        <location filename="../appearancepage.cpp" line="264"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location filename="../appearancepage.cpp" line="129"/>
-        <location filename="../appearancepage.cpp" line="205"/>
-        <location filename="../appearancepage.cpp" line="239"/>
+        <location filename="../appearancepage.cpp" line="150"/>
+        <location filename="../appearancepage.cpp" line="226"/>
+        <location filename="../appearancepage.cpp" line="264"/>
         <source>The color scheme &quot;%1&quot; already exists</source>
         <translation>Het kleurenschema &quot;%1&quot; bestaat al</translation>
     </message>
     <message>
-        <location filename="../appearancepage.cpp" line="147"/>
-        <location filename="../appearancepage.cpp" line="170"/>
-        <location filename="../appearancepage.cpp" line="224"/>
+        <location filename="../appearancepage.cpp" line="168"/>
+        <location filename="../appearancepage.cpp" line="191"/>
+        <location filename="../appearancepage.cpp" line="249"/>
         <source>Warning</source>
         <translation>Waarschuwing</translation>
     </message>
     <message>
-        <location filename="../appearancepage.cpp" line="147"/>
-        <location filename="../appearancepage.cpp" line="170"/>
-        <location filename="../appearancepage.cpp" line="224"/>
+        <location filename="../appearancepage.cpp" line="168"/>
+        <location filename="../appearancepage.cpp" line="191"/>
+        <location filename="../appearancepage.cpp" line="249"/>
         <source>The color scheme &quot;%1&quot; is read only</source>
         <translation>Het kleurenschema &quot;%1&quot; is alleen-lezen</translation>
     </message>
     <message>
-        <location filename="../appearancepage.cpp" line="175"/>
+        <location filename="../appearancepage.cpp" line="196"/>
         <source>Confirm Remove</source>
-        <translation>Verwijderen bevestigen</translation>
+        <translation>Verwijdering bevestigen</translation>
     </message>
     <message>
-        <location filename="../appearancepage.cpp" line="176"/>
+        <location filename="../appearancepage.cpp" line="197"/>
         <source>Are you sure you want to remove color scheme &quot;%1&quot;?</source>
         <translation>Weet u zeker dat u het kleurenschema &quot;%1&quot; wilt verwijderen?</translation>
     </message>
     <message>
-        <location filename="../appearancepage.cpp" line="196"/>
+        <location filename="../appearancepage.cpp" line="217"/>
         <source>%1 (copy)</source>
         <translation>%1 (kopie)</translation>
+    </message>
+    <message>
+        <location filename="../appearancepage.cpp" line="234"/>
+        <source>Unable to copy file</source>
+        <translation>Kopiëren van bestand is niet mogelijk</translation>
     </message>
 </context>
 <context>
@@ -213,7 +223,7 @@
     <message>
         <location filename="../fontconfigdialog.cpp" line="74"/>
         <source>&lt;i&gt;%1&lt;/i&gt; already exists. Do you want to replace it?</source>
-        <translation>&lt;i&gt;%1&lt;/i&gt; bestaat al. Wilt u deze vervangen?</translation>
+        <translation>&lt;i&gt;%1&lt;/i&gt; bestaat al. Wilt u het vervangen?</translation>
     </message>
 </context>
 <context>
@@ -388,7 +398,7 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <source>Qt5 Configuration Tool</source>
-        <translation>Qt5-instellingengereedschap</translation>
+        <translation>Qt5-instellingen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="45"/>
@@ -556,7 +566,7 @@
     <message>
         <location filename="../paletteeditdialog.cpp" line="94"/>
         <source>Alternate background</source>
-        <translation>Alternatieve achtergrond</translation>
+        <translation>Afwisselende achtergrond</translation>
     </message>
     <message>
         <location filename="../paletteeditdialog.cpp" line="106"/>
@@ -600,7 +610,7 @@
 <context>
     <name>QSSEditorDialog</name>
     <message>
-        <location filename="../qsseditordialog.cpp" line="45"/>
+        <location filename="../qsseditordialog.cpp" line="46"/>
         <source>%1 - Style Sheet Editor</source>
         <translation>%1 - Stijlbladbewerker</translation>
     </message>
@@ -620,72 +630,98 @@
     <message>
         <location filename="../qsspage.ui" line="66"/>
         <location filename="../qsspage.cpp" line="51"/>
+        <location filename="../qsspage.cpp" line="87"/>
         <source>Edit</source>
         <translation>Bewerken</translation>
     </message>
     <message>
         <location filename="../qsspage.ui" line="76"/>
-        <location filename="../qsspage.cpp" line="52"/>
+        <location filename="../qsspage.cpp" line="53"/>
         <source>Rename</source>
         <translation>Naam wijzigen</translation>
     </message>
     <message>
         <location filename="../qsspage.ui" line="33"/>
-        <location filename="../qsspage.cpp" line="54"/>
+        <location filename="../qsspage.cpp" line="55"/>
         <source>Remove</source>
         <translation>Verwijderen</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="102"/>
+        <location filename="../qsspage.cpp" line="52"/>
+        <source>Create a Copy</source>
+        <translation>Kopie creëren</translation>
+    </message>
+    <message>
+        <location filename="../qsspage.cpp" line="92"/>
+        <source>View</source>
+        <translation>Weergave</translation>
+    </message>
+    <message>
+        <location filename="../qsspage.cpp" line="106"/>
+        <location filename="../qsspage.cpp" line="251"/>
         <source>File name:</source>
         <translation>Bestandsnaam:</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="102"/>
+        <location filename="../qsspage.cpp" line="106"/>
+        <location filename="../qsspage.cpp" line="251"/>
         <source>Enter Style Sheet Name</source>
         <translation>Voer een naam in voor dit stijlblad</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="113"/>
-        <location filename="../qsspage.cpp" line="211"/>
-        <location filename="../qsspage.cpp" line="222"/>
+        <location filename="../qsspage.cpp" line="117"/>
+        <location filename="../qsspage.cpp" line="218"/>
+        <location filename="../qsspage.cpp" line="226"/>
+        <location filename="../qsspage.cpp" line="263"/>
+        <location filename="../qsspage.cpp" line="271"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="113"/>
+        <location filename="../qsspage.cpp" line="117"/>
         <source>The file &quot;%1&quot; already exists</source>
         <translation>Het bestand &quot;%1&quot; bestaat al</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="147"/>
+        <location filename="../qsspage.cpp" line="151"/>
         <source>Confirm Remove</source>
-        <translation>Verwijderen bevestigen</translation>
+        <translation>Verwijdering bevestigen</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="148"/>
+        <location filename="../qsspage.cpp" line="152"/>
         <source>Are you sure you want to remove style sheet &quot;%1&quot;?</source>
         <translation>Weet u zeker dat u het stijlblad &quot;%1&quot; wilt verwijderen?</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="204"/>
+        <location filename="../qsspage.cpp" line="208"/>
         <source>Rename Style Sheet</source>
         <translation>Stijlbladnaam wijzigen</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="204"/>
+        <location filename="../qsspage.cpp" line="208"/>
         <source>Style sheet name:</source>
         <translation>Stijlbladnaam:</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="211"/>
+        <location filename="../qsspage.cpp" line="218"/>
+        <location filename="../qsspage.cpp" line="263"/>
         <source>The style sheet &quot;%1&quot; already exists</source>
         <translation>Het stijlblad &quot;%1&quot; bestaat al</translation>
     </message>
     <message>
-        <location filename="../qsspage.cpp" line="222"/>
+        <location filename="../qsspage.cpp" line="226"/>
         <source>Unable to rename file</source>
         <translation>Het wijzigen van de bestandsnaam is mislukt</translation>
+    </message>
+    <message>
+        <location filename="../qsspage.cpp" line="253"/>
+        <source>%1 (copy).qss</source>
+        <translation>%1 (kopie).qss</translation>
+    </message>
+    <message>
+        <location filename="../qsspage.cpp" line="271"/>
+        <source>Unable to copy file</source>
+        <translation>Kopiëren van bestand is niet mogelijk</translation>
     </message>
 </context>
 <context>

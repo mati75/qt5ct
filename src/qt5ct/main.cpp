@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
+ * Copyright (c) 2014-2018, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -75,7 +75,7 @@ int main(int argc, char **argv)
 
     if(!errorMessages.isEmpty())
     {
-        QMessageBox::critical(0, app.translate("main", "Error"), errorMessages.join("<br><br>"));
+        QMessageBox::critical(nullptr, app.translate("main", "Error"), errorMessages.join("<br><br>"));
         return 0;
     }
 

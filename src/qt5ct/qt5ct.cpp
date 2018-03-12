@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
+ * Copyright (c) 2014-2018, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -110,7 +110,7 @@ QString Qt5CT::systemLanguageID()
     if (v.isEmpty())
         v = qgetenv ("LANG");
     if (!v.isEmpty())
-        return QLocale (v).name();
+        return QLocale (QString::fromLatin1(v)).name();
 #endif
     return  QLocale::system().name();
 }

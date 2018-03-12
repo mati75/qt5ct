@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
+ * Copyright (c) 2014-2018, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -36,7 +36,7 @@ class Qt5CTPlatformThemePlugin: public QPlatformThemePlugin
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QPA.QPlatformThemeFactoryInterface.5.1" FILE "qt5ct.json")
 public:
-    QPlatformTheme *create(const QString &key, const QStringList &params);
+    QPlatformTheme *create(const QString &key, const QStringList &params) override;
 };
 
 QPlatformTheme *Qt5CTPlatformThemePlugin::create(const QString &key, const QStringList &params)
