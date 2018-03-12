@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
+ * Copyright (c) 2014-2018, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -34,6 +34,10 @@
 #include <QMessageBox>
 #include <QMenu>
 #include <QIcon>
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 9, 0))
+#include <QStringList>
+#include <qpa/qplatformthemefactory_p.h>
+#endif
 #include "qt5ct.h"
 #include "appearancepage.h"
 #include "paletteeditdialog.h"
@@ -56,23 +60,39 @@ AppearancePage::AppearancePage(QWidget *parent) :
     m_previewWidget = new QWidget(this);
     m_previewUi = new Ui::PreviewForm();
     m_previewUi->setupUi(m_previewWidget);
-    QMdiSubWindow *w = m_ui->mdiArea->addSubWindow(m_previewWidget, Qt::CustomizeWindowHint
+    QMdiSubWindow *w = m_ui->mdiArea->addSubWindow(m_previewWidget, Qt::SubWindow | Qt::CustomizeWindowHint
                                                    | Qt::WindowMinMaxButtonsHint
-                                                   | Qt::WindowTitleHint);
+                                                   | Qt::WindowTitleHint
+                                                   | Qt::WindowDoesNotAcceptFocus);
+    w->setFocusPolicy(Qt::NoFocus);
     w->move(10, 10);
 
     QMenu *menu = new QMenu(this);
-    menu->addAction(QIcon::fromTheme("list-add"), tr("Create"), this, SLOT(createColorScheme()));
-    m_changeColorSchemeAction = menu->addAction(tr("Edit"), this, SLOT(changeColorScheme()));
-    menu->addAction(tr("Create a Copy"), this, SLOT(copyColorScheme()));
+    menu->addAction(QIcon::fromTheme("document-new"), tr("Create"), this, SLOT(createColorScheme()));
+    m_changeColorSchemeAction = menu->addAction(QIcon::fromTheme("accessories-text-editor"), tr("Edit"), this, SLOT(changeColorScheme()));
+    menu->addAction(QIcon::fromTheme("edit-copy"), tr("Create a Copy"), this, SLOT(copyColorScheme()));
     m_renameColorSchemeAction = menu->addAction(tr("Rename"), this, SLOT(renameColorScheme()));
     menu->addSeparator();
-    m_removeColorSchemeAction = menu->addAction(tr("Remove"), this, SLOT(removeColorScheme()));
+    m_removeColorSchemeAction = menu->addAction(QIcon::fromTheme("edit-delete"), tr("Remove"), this, SLOT(removeColorScheme()));
     m_ui->colorSchemeButton->setMenu(menu);
 
     m_changeColorSchemeAction->setIcon(QIcon::fromTheme("accessories-text-editor"));
     m_removeColorSchemeAction->setIcon(QIcon::fromTheme("list-remove"));
     connect(menu, SIGNAL(aboutToShow()), SLOT(updateActions()));
+
+#if (QT_VERSION < QT_VERSION_CHECK(5, 9, 0))
+    m_ui->dialogLabel->hide();
+    m_ui->dialogComboBox->hide();
+#else
+    keys = QPlatformThemeFactory::keys();
+    m_ui->dialogComboBox->addItem(tr("Default"), "default");
+    if(keys.contains("gtk3") || keys.contains("qt5gtk3"))
+        m_ui->dialogComboBox->addItem("GTK3", "gtk3");
+    if(keys.contains("gtk2") || keys.contains("qt5gtk2"))
+        m_ui->dialogComboBox->addItem("GTK2", "gtk2");
+    if(keys.contains("kde"))
+        m_ui->dialogComboBox->addItem("KDE", "kde");
+#endif
 
     readSettings();
 }
@@ -92,6 +112,9 @@ void AppearancePage::writeSettings()
     settings.setValue("style", m_ui->styleComboBox->currentText());
     settings.setValue("custom_palette", m_ui->customPaletteButton->isChecked());
     settings.setValue("color_scheme_path", m_ui->colorSchemeComboBox->currentData().toString());
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 9, 0))
+    settings.setValue("standard_dialogs", m_ui->dialogComboBox->currentData().toString());
+#endif
     settings.endGroup();
 }
 
@@ -131,7 +154,7 @@ void AppearancePage::createColorScheme()
         return;
     }
 
-    QString schemePath = Qt5CT::userColorSchemePath() + "/" + name;
+    QString schemePath = Qt5CT::userColorSchemePath() + QLatin1String("/") + name;
 
     createColorScheme(schemePath, palette());
     m_ui->colorSchemeComboBox->addItem(name.section('.',0,0), schemePath);
@@ -207,8 +230,12 @@ void AppearancePage::copyColorScheme()
         return;
     }
 
-    QString newPath =  Qt5CT::userColorSchemePath() + "/" + name;
-    QFile::copy(m_ui->colorSchemeComboBox->currentData().toString(), newPath);
+    QString newPath =  Qt5CT::userColorSchemePath() + QLatin1String("/") + name;
+    if(!QFile::copy(m_ui->colorSchemeComboBox->currentData().toString(), newPath))
+    {
+        QMessageBox::warning(this, tr("Error"), tr("Unable to copy file"));
+        return;
+    }
     m_ui->colorSchemeComboBox->addItem(name.section('.',0,0), newPath);
 }
 
@@ -241,7 +268,7 @@ void AppearancePage::renameColorScheme()
         return;
     }
 
-    QString newPath =  Qt5CT::userColorSchemePath() + "/" + name;
+    QString newPath =  Qt5CT::userColorSchemePath() + QLatin1String("/") + name;
     QFile::rename(m_ui->colorSchemeComboBox->currentData().toString(), newPath);
     m_ui->colorSchemeComboBox->setItemText(index, name.section('.',0,0));
     m_ui->colorSchemeComboBox->setItemData(index, newPath);
@@ -325,6 +352,11 @@ void AppearancePage::readSettings()
     }
 
     on_styleComboBox_activated(m_ui->styleComboBox->currentText());
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 9, 0))
+    int index = m_ui->dialogComboBox->findData(settings.value("standard_dialogs").toString());
+    m_ui->dialogComboBox->setCurrentIndex(qMax(index, 0));
+#endif
 
     settings.endGroup();
 }

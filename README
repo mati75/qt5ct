@@ -9,7 +9,7 @@ Requirements:
 
 - GNU Linux or FreeBSD
 - qtbase >= 5.4.0
-- qtsvg >= 5.4.0 (For svg icons)
+- qtsvg >= 5.4.0 (Runtime dependency for the SVG icons support)
 - qttools >= 5.4.0 (For build only)
 
 
@@ -29,7 +29,15 @@ Now restart X11 server to take the changes effect.
 
 Extra build options (for advanced users only):
 qmake DISABLE_WIDGETS=1 - compiles platform plugin without QtWidgets (useful for QML applications only)
+qmake DISABLE_DBUS=1 - disable D-Bus support (global menu and D-Bus tray icon implementation)
 qmake PLUGINDIR=<custom path> - changes the default installation path of the plugins (libqt5ct.so and libqt5ct-style.so)
+
+Wayland:
+
+If you are running Qt application under under Wayland, you should export the following variables:
+
+export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 Debug Messages:
 
@@ -47,13 +55,8 @@ qt5ct - Qt5 configuration tool
 libqt5ct.so - qt5ct platform plugin
 libqt5ct-style.so - qt5ct proxy style plugin
 ~/.config/qt5ct/qt5ct.conf - configuration file
-~/.config/qt5ct/qss, 
-~/.local/share/qt5ct/qss, 
-/usr/share/qt5ct/qss,
-/usr/local/share/qt5ct/qss - style sheets
-~/.config/qt5ct/colors, 
-~/.local/share/qt5ct/colors,
-/usr/share/qt5ct/colors,
+~/.config/qt5ct/qss, ~/.local/share/qt5ct/qss, /usr/share/qt5ct/qss, /usr/local/share/qt5ct/qss - style sheets
+~/.config/qt5ct/colors,~/.local/share/qt5ct/colors, /usr/share/qt5ct/colors,
 /usr/local/share/qt5ct/colors - color schemes
 
 Translation:

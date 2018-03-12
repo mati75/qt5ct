@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
+ * Copyright (c) 2014-2018, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -49,6 +49,7 @@ QSSPage::QSSPage(QWidget *parent) :
 
     m_menu = new QMenu(this);
     m_menu->addAction(QIcon::fromTheme("accessories-text-editor"), tr("Edit"), this, SLOT(on_editButton_clicked()));
+    m_menu->addAction(QIcon::fromTheme("edit-copy"), tr("Create a Copy"), this, SLOT(copyStyleSheet()));
     m_menu->addAction(tr("Rename"), this, SLOT(on_renameButton_clicked()));
     m_menu->addSeparator();
     m_menu->addAction(QIcon::fromTheme("edit-delete"), tr("Remove"), this, SLOT(on_removeButton_clicked()));
@@ -83,9 +84,12 @@ void QSSPage::writeSettings()
 
 void QSSPage::on_qssListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *)
 {
+    m_ui->editButton->setText(tr("Edit"));
     if(current)
     {
-        m_ui->editButton->setEnabled(current->data(QSS_WRITABLE_ROLE).toBool());
+        m_ui->editButton->setEnabled(true);
+        if(!current->data(QSS_WRITABLE_ROLE).toBool())
+            m_ui->editButton->setText(tr("View"));
         m_ui->removeButton->setEnabled(current->data(QSS_WRITABLE_ROLE).toBool());
         m_ui->renameButton->setEnabled(current->data(QSS_WRITABLE_ROLE).toBool());
     }
@@ -106,7 +110,7 @@ void QSSPage::on_createButton_clicked()
     if(!name.endsWith(".qss", Qt::CaseInsensitive))
         name.append(".qss");
 
-    QString filePath = Qt5CT::userStyleSheetPath() + name;
+    QString filePath = Qt5CT::userStyleSheetPath() + QLatin1String("/") + name;
 
     if(QFile::exists(filePath))
     {
@@ -202,9 +206,12 @@ void QSSPage::on_renameButton_clicked()
         return;
 
     QString name = QInputDialog::getText(this, tr("Rename Style Sheet"), tr("Style sheet name:"),
-                          QLineEdit::Normal, item->text(), 0);
+                          QLineEdit::Normal, item->text(), nullptr);
     if(name.isEmpty())
         return;
+
+    if(!name.endsWith(".qss", Qt::CaseInsensitive))
+            name.append(".qss");
 
     if(!m_ui->qssListWidget->findItems(name, Qt::MatchExactly).isEmpty())
     {
@@ -212,10 +219,7 @@ void QSSPage::on_renameButton_clicked()
         return;
     }
 
-    if(!name.endsWith(".qss", Qt::CaseInsensitive))
-            name.append(".qss");
-
-    QString newPath = Qt5CT::userStyleSheetPath() + name;
+    QString newPath = Qt5CT::userStyleSheetPath() + QLatin1String("/") + name;
 
     if(!QFile::rename(item->data(QSS_FULL_PATH_ROLE).toString(), newPath))
     {
@@ -235,4 +239,43 @@ void QSSPage::on_qssListWidget_customContextMenuRequested(const QPoint &pos)
     {
         m_menu->exec(m_ui->qssListWidget->viewport()->mapToGlobal(pos));
     }
+}
+
+void QSSPage::copyStyleSheet()
+{
+    QListWidgetItem *item = m_ui->qssListWidget->currentItem();
+
+    if(!item)
+        return;
+
+    QString name = QInputDialog::getText(this, tr("Enter Style Sheet Name"), tr("File name:"),
+                                         QLineEdit::Normal,
+                                         tr("%1 (copy).qss").arg(item->text().section('.',0,0)));
+
+    if(name.isEmpty())
+        return;
+
+    if(!name.endsWith(".qss", Qt::CaseInsensitive))
+        name.append(".qss");
+
+    if(!m_ui->qssListWidget->findItems(name, Qt::MatchExactly).isEmpty())
+    {
+        QMessageBox::warning(this, tr("Error"), tr("The style sheet \"%1\" already exists").arg(name));
+        return;
+    }
+
+    QString newPath = Qt5CT::userStyleSheetPath() + QLatin1String("/") + name;
+
+    if(!QFile::copy(item->data(QSS_FULL_PATH_ROLE).toString(), newPath))
+    {
+        QMessageBox::warning(this, tr("Error"), tr("Unable to copy file"));
+        return;
+    }
+
+    QListWidgetItem *newItem = new QListWidgetItem(m_ui->qssListWidget);
+    newItem->setText(name);
+    newItem->setData(QSS_FULL_PATH_ROLE, newPath);
+    newItem->setData(QSS_WRITABLE_ROLE, true);
+    newItem->setToolTip(newPath);
+    newItem->setCheckState(Qt::Unchecked);
 }

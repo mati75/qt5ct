@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
+ * Copyright (c) 2014-2018, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -34,19 +34,26 @@
 #include <QFont>
 #include <QPalette>
 #include <QLoggingCategory>
+#include <QScopedPointer>
 
-#if (QT_VERSION < QT_VERSION_CHECK(5, 5, 0))
-#ifndef QT_NO_SYSTEMTRAYICON
-#define QT_NO_SYSTEMTRAYICON
+#if !defined(QT_NO_DBUS) && defined(QT_DBUS_LIB)
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 5, 0)) && !defined(QT_NO_SYSTEMTRAYICON)
+#define DBUS_TRAY
 #endif
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 7, 0))
+#define GLOBAL_MENU
+#endif
+
 #endif
 
 class QPalette;
-#if !defined(QT_NO_DBUS) && !defined(QT_NO_SYSTEMTRAYICON)
+#ifdef DBUS_TRAY
 class QPlatformSystemTrayIcon;
 #endif
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)) && !defined(QT_NO_DBUS)
+#ifdef GLOBAL_MENU
 class QPlatformMenuBar;
 #endif
 
@@ -61,18 +68,20 @@ public:
 
     //virtual QPlatformMenuItem* createPlatformMenuItem() const;
     //virtual QPlatformMenu* createPlatformMenu() const;
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)) && !defined(QT_NO_DBUS)
-    virtual QPlatformMenuBar* createPlatformMenuBar() const;
+#ifdef GLOBAL_MENU
+    virtual QPlatformMenuBar* createPlatformMenuBar() const override;
 #endif
     //virtual void showPlatformMenuBar() {}
-    //virtual bool usePlatformNativeDialog(DialogType type) const;
-    //virtual QPlatformDialogHelper *createPlatformDialogHelper(DialogType type) const;
-#if !defined(QT_NO_DBUS) && !defined(QT_NO_SYSTEMTRAYICON)
-    virtual QPlatformSystemTrayIcon *createPlatformSystemTrayIcon() const;
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 9, 0))
+    virtual bool usePlatformNativeDialog(DialogType type) const override;
+    virtual QPlatformDialogHelper *createPlatformDialogHelper(DialogType type) const override;
 #endif
-    virtual const QPalette *palette(Palette type = SystemPalette) const;
-    virtual const QFont *font(Font type = SystemFont) const;
-    virtual QVariant themeHint(ThemeHint hint) const;
+#ifdef DBUS_TRAY
+    virtual QPlatformSystemTrayIcon *createPlatformSystemTrayIcon() const override;
+#endif
+    virtual const QPalette *palette(Palette type = SystemPalette) const override;
+    virtual const QFont *font(Font type = SystemFont) const override;
+    virtual QVariant themeHint(ThemeHint hint) const override;
     //virtual QPixmap standardPixmap(StandardPixmap sp, const QSizeF &size) const;
     //virtual QPixmap fileIconPixmap(const QFileInfo &fileInfo, const QSizeF &size,
     //                               QPlatformTheme::IconOptions iconOptions = 0) const;
@@ -106,13 +115,17 @@ private:
     bool m_usePalette = true;
     int m_toolButtonStyle = Qt::ToolButtonFollowStyle;
     int m_wheelScrollLines = 3;
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)) && !defined(QT_NO_DBUS)
+#ifdef GLOBAL_MENU
     mutable bool m_dbusGlobalMenuAvailable = false;
     mutable bool m_checkDBusGlobalMenu = true;
 #endif
-#if !defined(QT_NO_DBUS) && !defined(QT_NO_SYSTEMTRAYICON)
+#ifdef DBUS_TRAY
     mutable bool m_dbusTrayAvailable = false;
     mutable bool m_checkDBusTray = true;
+#endif
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 9, 0))
+    QScopedPointer<QPlatformTheme> m_theme;
 #endif
 
 };

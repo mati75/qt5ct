@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
+ * Copyright (c) 2014-2018, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -43,7 +43,7 @@ class QSSEditorDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit QSSEditorDialog(const QString &filePath, QWidget *parent = 0);
+    explicit QSSEditorDialog(const QString &filePath, QWidget *parent = nullptr);
     ~QSSEditorDialog();
 
 private slots:
@@ -51,7 +51,7 @@ private slots:
 
 private:
     void save();
-    void hideEvent(QHideEvent *);
+    void hideEvent(QHideEvent *) override;
     Ui::QSSEditorDialog *m_ui;
     QString m_filePath;
 };

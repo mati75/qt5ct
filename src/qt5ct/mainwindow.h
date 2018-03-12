@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
+ * Copyright (c) 2014-2018, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -42,14 +42,15 @@ class MainWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
     void on_buttonBox_clicked(QAbstractButton *button);
 
 private:
-    void closeEvent(QCloseEvent *);
+    void showEvent(QShowEvent *) override;
+    void closeEvent(QCloseEvent *) override;
 
     Ui::MainWindow *m_ui;
 };

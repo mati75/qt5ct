@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
+ * Copyright (c) 2014-2018, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -41,10 +41,10 @@ class IconThemePage : public TabPage
     Q_OBJECT
 
 public:
-    explicit IconThemePage(QWidget *parent = 0);
+    explicit IconThemePage(QWidget *parent = nullptr);
     ~IconThemePage();
 
-    void writeSettings();
+    void writeSettings() override;
 
 private:
     void readSettings();

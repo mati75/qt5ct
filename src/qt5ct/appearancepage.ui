@@ -21,7 +21,39 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="0" colspan="3">
+   <item row="0" column="1">
+    <widget class="QComboBox" name="styleComboBox"/>
+   </item>
+   <item row="0" column="5">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="2">
+    <spacer name="horizontalSpacer_5">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="0" colspan="6">
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
       <string>Preview</string>
@@ -29,6 +61,9 @@
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
        <widget class="QComboBox" name="paletteComboBox">
+        <property name="focusPolicy">
+         <enum>Qt::TabFocus</enum>
+        </property>
         <item>
          <property name="text">
           <string>Active palette</string>
@@ -61,6 +96,9 @@
       </item>
       <item row="1" column="0" colspan="2">
        <widget class="QMdiArea" name="mdiArea">
+        <property name="activationOrder">
+         <enum>QMdiArea::ActivationHistoryOrder</enum>
+        </property>
         <property name="tabsMovable">
          <bool>false</bool>
         </property>
@@ -69,23 +107,7 @@
      </layout>
     </widget>
    </item>
-   <item row="0" column="1">
-    <widget class="QComboBox" name="styleComboBox"/>
-   </item>
-   <item row="0" column="2">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="2" column="0" colspan="3">
+   <item row="2" column="0" colspan="6">
     <widget class="QGroupBox" name="paletteGroupBox">
      <property name="title">
       <string>Palette</string>
@@ -151,6 +173,9 @@
             <height>0</height>
            </size>
           </property>
+          <property name="focusPolicy">
+           <enum>Qt::TabFocus</enum>
+          </property>
          </widget>
         </item>
         <item>
@@ -187,8 +212,27 @@
      </layout>
     </widget>
    </item>
+   <item row="0" column="3">
+    <widget class="QLabel" name="dialogLabel">
+     <property name="text">
+      <string>Standard dialogs:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="4">
+    <widget class="QComboBox" name="dialogComboBox"/>
+   </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>styleComboBox</tabstop>
+  <tabstop>dialogComboBox</tabstop>
+  <tabstop>defaultPaletteButton</tabstop>
+  <tabstop>customPaletteButton</tabstop>
+  <tabstop>colorSchemeComboBox</tabstop>
+  <tabstop>colorSchemeButton</tabstop>
+  <tabstop>paletteComboBox</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

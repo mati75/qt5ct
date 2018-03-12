@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
+ * Copyright (c) 2014-2018, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -46,14 +46,17 @@
 
 #include <qt5ct/qt5ct.h>
 #include "qt5ctplatformtheme.h"
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)) && !defined(QT_NO_DBUS)
+#ifdef GLOBAL_MENU
 #include <private/qdbusmenubar_p.h>
 #endif
-#if !defined(QT_NO_DBUS) && !defined(QT_NO_SYSTEMTRAYICON)
+#ifdef DBUS_TRAY
 #include <private/qdbustrayicon_p.h>
 #endif
 
-
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 9, 0))
+#include <QStringList>
+#include <qpa/qplatformthemefactory_p.h>
+#endif
 
 Q_LOGGING_CATEGORY(lqt5ct, "qt5ct")
 
@@ -81,9 +84,10 @@ Qt5CTPlatformTheme::~Qt5CTPlatformTheme()
 {
     if(m_customPalette)
         delete m_customPalette;
+
 }
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)) && !defined(QT_NO_DBUS)
+#ifdef GLOBAL_MENU
 QPlatformMenuBar *Qt5CTPlatformTheme::createPlatformMenuBar() const
 {
     if(m_checkDBusGlobalMenu)
@@ -97,7 +101,21 @@ QPlatformMenuBar *Qt5CTPlatformTheme::createPlatformMenuBar() const
 }
 #endif
 
-#if !defined(QT_NO_DBUS) && !defined(QT_NO_SYSTEMTRAYICON)
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 9, 0))
+bool Qt5CTPlatformTheme::usePlatformNativeDialog(DialogType type) const
+{
+    return m_theme ? m_theme->usePlatformNativeDialog(type) :
+                     QPlatformTheme::usePlatformNativeDialog(type);
+}
+
+QPlatformDialogHelper *Qt5CTPlatformTheme::createPlatformDialogHelper(DialogType type) const
+{
+    return m_theme ? m_theme->createPlatformDialogHelper(type) :
+                     QPlatformTheme::createPlatformDialogHelper(type);
+}
+#endif
+
+#ifdef DBUS_TRAY
 QPlatformSystemTrayIcon *Qt5CTPlatformTheme::createPlatformSystemTrayIcon() const
 {
     if(m_checkDBusTray)
@@ -249,7 +267,7 @@ void Qt5CTPlatformTheme::readSettings()
     if(m_customPalette)
     {
         delete m_customPalette;
-        m_customPalette = 0;
+        m_customPalette = nullptr;
     }
 
     QSettings settings(Qt5CT::configFile(), QSettings::IniFormat);
@@ -262,6 +280,21 @@ void Qt5CTPlatformTheme::readSettings()
         m_customPalette = new QPalette(loadColorScheme(schemePath));
     }
     m_iconTheme = settings.value("icon_theme").toString();
+    //load dialogs
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 9, 0))
+    if(!m_update)
+    {
+        QStringList keys = QPlatformThemeFactory::keys();
+        QString name = settings.value("standard_dialogs", "default").toString();
+        if(keys.contains(name))
+            m_theme.reset(QPlatformThemeFactory::create(name));
+        else if(name == QLatin1String("gtk2") && keys.contains("qt5gtk2"))
+            m_theme.reset(QPlatformThemeFactory::create("qt5gtk2"));
+        else if(name == QLatin1String("gtk3") && keys.contains("qt5gtk3"))
+            m_theme.reset(QPlatformThemeFactory::create("qt5gtk3"));
+    }
+#endif
+
     settings.endGroup();
 
     settings.beginGroup("Fonts");
@@ -307,6 +340,7 @@ void Qt5CTPlatformTheme::readSettings()
     QStringList qssPaths = settings.value("stylesheets").toStringList();
     m_userStyleSheet = loadStyleSheets(qssPaths);
 #endif
+
     settings.endGroup();
 }
 
@@ -327,7 +361,7 @@ QString Qt5CTPlatformTheme::loadStyleSheets(const QStringList &paths)
 
         QFile file(path);
         file.open(QIODevice::ReadOnly);
-        content.append(file.readAll());
+        content.append(QString::fromUtf8(file.readAll()));
     }
     QRegExp regExp("//.*(\\n|$)");
     regExp.setMinimal(true);

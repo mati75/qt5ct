@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
+ * Copyright (c) 2014-2018, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -44,10 +44,10 @@ class AppearancePage : public TabPage
     Q_OBJECT
 
 public:
-    explicit AppearancePage(QWidget *parent = 0);
+    explicit AppearancePage(QWidget *parent = nullptr);
     ~AppearancePage();
 
-    void writeSettings();
+    void writeSettings() override;
 
 private slots:
     void on_styleComboBox_activated(const QString &text);

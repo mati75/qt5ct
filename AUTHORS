@@ -1,6 +1,6 @@
 Developers:
 
-  Ilya Kotov <forkorov02@ya.ru>, <trialuser02@gmail.com>
+  Ilya Kotov <forkorov02@ya.ru>, <trialuser02@gmail.com>, <i.kotov@rusbitech.ru>
 
 Translators:
 
@@ -10,7 +10,8 @@ Translators:
   Chinese (Taiwan) - Jeff Huang
   Czech - fri
   Danish - scootergrisen
-  French - David GEIGER <david.david@mageialinux-online.org>, Adrien DAUGABEL <adrien.d@mageialinux-online.org>,
+  French - David GEIGER <david.david@mageialinux-online.org>, 
+           Adrien DAUGABEL <adrien.d@mageialinux-online.org>,
            papoteur <papoteur@mageialinux-online.org>
   Greek - Dimitrios Glentadakis
   Hebrew - Genghis Khan, Elkana Birdugo
@@ -22,3 +23,8 @@ Translators:
   Serbian - markosm
   Slovak - Ján Ďanovský
   Spanish - jcn363
+
+Style sheets and color schemes:
+  airy.conf, darker.conf, dusk.conf, sand.conf, simple.conf, waves.conf,
+  *-simple.qss - q5sys (Lumina Desktop Environment)
+  fusion-fixes.qss - burak

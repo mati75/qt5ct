@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2017, Ilya Kotov <forkotov02@ya.ru>
+ * Copyright (c) 2014-2018, Ilya Kotov <forkotov02@ya.ru>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -35,7 +35,7 @@ class TabPage : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TabPage(QWidget *parent = 0);
+    explicit TabPage(QWidget *parent = nullptr);
 
     virtual void writeSettings() = 0;
 };
