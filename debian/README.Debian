@@ -1,8 +1,0 @@
-README.Debian for qt5ct
-
- * After install this package, please, add the following line into 
-   the ~/.xprofile (user) or /etc/environment (system):
-   export QT_QPA_PLATFORMTHEME=qt5ct" and it will work.
-   Qt5ct will only be active on environments other than Plasma.
-
- -- Mateusz Łukasik <mati75@linuxmint.pl>  Sun, 24 Jan 2016 12:00:38 +0100

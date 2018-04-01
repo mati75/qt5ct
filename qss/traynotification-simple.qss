@@ -1,4 +1,0 @@
-QBalloonTip{ 
-background-color: palette(base);
-color: palette(text);
-}

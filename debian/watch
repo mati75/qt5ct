@@ -1,2 +1,0 @@
-version=3
-http://sf.net/qt5ct/qt5ct-(\d\S*)\.(?:zip|tgz|tbz|txz|(?:tar\.(?:gz|bz2|xz)))
